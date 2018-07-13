@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.16.0-Nødebo" simplifyAlgorithm="0" minimumScale="1" maximumScale="1" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.18.15" simplifyAlgorithm="0" minimumScale="1" maximumScale="1" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="id">
       <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -81,19 +81,32 @@
     <edittype widgetv2type="TextEdit" name="id_trecho_curso_dagua">
       <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
+    <edittype widgetv2type="TextEdit" name="observacao">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="data_modificacao">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="controle_id">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="ultimo_usuario">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
     <edittype widgetv2type="TextEdit" name="lenght_otf">
       <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
   </edittypes>
-  <renderer-v2 attr="regime" forceraster="0" symbollevels="0" type="categorizedSymbol" enableorderby="0">
-    <categories>
-      <category render="true" symbol="0" value="1" label="Permanente"/>
-      <category render="true" symbol="1" value="2" label="Permanente com grande variação"/>
-      <category render="true" symbol="2" value="3" label="Temporário"/>
-      <category render="true" symbol="3" value="4" label="Temporário com leito permanente"/>
-      <category render="true" symbol="4" value="5" label="Seco"/>
-      <category render="true" symbol="5" value="" label=""/>
-    </categories>
+  <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
+    <rules key="{169f2ddd-fa34-4be8-b3e8-6974bfc4c924}">
+      <rule filter="&quot;regime&quot; = 1 AND &quot;nome&quot; != ''" key="{32291303-3018-467a-86ce-76d4e4255b5e}" symbol="0" label="Permanente com Nome"/>
+      <rule filter="&quot;regime&quot; = 1     AND     (&quot;nome&quot; = ''    OR   &quot;nome&quot;  IS  NULL)" key="{4b58c64e-84b0-4325-88d3-87eff0fa91d8}" symbol="1" label="Permanente"/>
+      <rule filter="&quot;regime&quot; = 2" key="{de659dc3-c748-4419-a898-e61871604b8d}" symbol="2" label="Permanente com grande variação"/>
+      <rule filter="&quot;regime&quot; = 3" key="{456558c7-9334-45b5-900e-c670ee35c73c}" symbol="3" label="Temporário"/>
+      <rule filter="&quot;regime&quot; = 4" key="{3b070710-76e9-47f0-bcd9-aec49c62e26f}" symbol="4" label="Temporário com leito permanente"/>
+      <rule filter="&quot;regime&quot; = 5" key="{02b41cd0-4725-435a-985e-2a00e20139c4}" symbol="5" label="Seco"/>
+      <rule filter="ELSE" key="{6bf49ebe-ed2a-44e5-8f55-8f4bd5c3549a}" symbol="6"/>
+    </rules>
     <symbols>
       <symbol alpha="1" clip_to_extent="1" type="line" name="0">
         <layer pass="0" class="SimpleLine" locked="0">
@@ -105,7 +118,7 @@
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="64,77,250,255"/>
           <prop k="line_style" v="solid"/>
-          <prop k="line_width" v="0.46"/>
+          <prop k="line_width" v="0.9"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -157,9 +170,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="208,66,206,255"/>
+          <prop k="line_color" v="64,77,250,255"/>
           <prop k="line_style" v="solid"/>
-          <prop k="line_width" v="0.46"/>
+          <prop k="line_width" v="0.23"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -182,7 +195,7 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="@1@1">
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="208,66,206,255"/>
+              <prop k="color" v="64,77,250,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="filled_arrowhead"/>
@@ -195,7 +208,7 @@
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="area"/>
-              <prop k="size" v="4"/>
+              <prop k="size" v="2"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -211,9 +224,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="37,203,195,255"/>
-          <prop k="line_style" v="dash"/>
-          <prop k="line_width" v="0.46"/>
+          <prop k="line_color" v="208,66,206,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.23"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -236,7 +249,7 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="@2@1">
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="37,203,195,255"/>
+              <prop k="color" v="208,66,206,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="filled_arrowhead"/>
@@ -249,7 +262,7 @@
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="area"/>
-              <prop k="size" v="4"/>
+              <prop k="size" v="2"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -265,9 +278,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="229,244,110,255"/>
+          <prop k="line_color" v="37,203,195,255"/>
           <prop k="line_style" v="dash"/>
-          <prop k="line_width" v="0.46"/>
+          <prop k="line_width" v="0.23"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -290,7 +303,7 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="@3@1">
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="229,244,110,255"/>
+              <prop k="color" v="37,203,195,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="filled_arrowhead"/>
@@ -303,7 +316,7 @@
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="area"/>
-              <prop k="size" v="4"/>
+              <prop k="size" v="2"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -319,9 +332,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="132,21,91,255"/>
+          <prop k="line_color" v="229,244,110,255"/>
           <prop k="line_style" v="dash"/>
-          <prop k="line_width" v="0.46"/>
+          <prop k="line_width" v="0.23"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -344,7 +357,7 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="@4@1">
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="132,21,91,255"/>
+              <prop k="color" v="229,244,110,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="filled_arrowhead"/>
@@ -357,7 +370,7 @@
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="area"/>
-              <prop k="size" v="4"/>
+              <prop k="size" v="2"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -373,30 +386,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="136,129,78,255"/>
-          <prop k="line_style" v="solid"/>
-          <prop k="line_width" v="0.26"/>
-          <prop k="line_width_unit" v="MM"/>
-          <prop k="offset" v="0"/>
-          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="use_custom_dash" v="0"/>
-          <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-        </layer>
-      </symbol>
-    </symbols>
-    <source-symbol>
-      <symbol alpha="1" clip_to_extent="1" type="line" name="0">
-        <layer pass="0" class="SimpleLine" locked="0">
-          <prop k="capstyle" v="square"/>
-          <prop k="customdash" v="5;2"/>
-          <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-          <prop k="customdash_unit" v="MM"/>
-          <prop k="draw_inside_polygon" v="0"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="64,77,250,255"/>
-          <prop k="line_style" v="solid"/>
-          <prop k="line_width" v="0.46"/>
+          <prop k="line_color" v="132,21,91,255"/>
+          <prop k="line_style" v="dash"/>
+          <prop k="line_width" v="0.23"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -416,10 +408,10 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="placement" v="centralpoint"/>
           <prop k="rotate" v="1"/>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="@0@1">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="@5@1">
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="242,3,59,255"/>
+              <prop k="color" v="132,21,91,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="filled_arrowhead"/>
@@ -432,7 +424,7 @@
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="area"/>
-              <prop k="size" v="4"/>
+              <prop k="size" v="2"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -440,9 +432,26 @@
           </symbol>
         </layer>
       </symbol>
-    </source-symbol>
-    <rotation/>
-    <sizescale scalemethod="diameter"/>
+      <symbol alpha="1" clip_to_extent="1" type="line" name="6">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="222,151,52,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.26"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+        </layer>
+      </symbol>
+    </symbols>
   </renderer-v2>
   <labeling type="simple"/>
   <customproperties>
@@ -573,18 +582,20 @@
     <property key="labeling/shapeSizeY" value="0"/>
     <property key="labeling/shapeTransparency" value="0"/>
     <property key="labeling/shapeType" value="0"/>
+    <property key="labeling/substitutions" value="&lt;substitutions/>"/>
     <property key="labeling/textColorA" value="255"/>
     <property key="labeling/textColorB" value="0"/>
     <property key="labeling/textColorG" value="0"/>
     <property key="labeling/textColorR" value="0"/>
     <property key="labeling/textTransp" value="0"/>
     <property key="labeling/upsidedownLabels" value="0"/>
+    <property key="labeling/useSubstitutions" value="false"/>
     <property key="labeling/wrapChar" value=""/>
     <property key="labeling/xOffset" value="0"/>
     <property key="labeling/yOffset" value="0"/>
     <property key="labeling/zIndex" value="0"/>
-    <property key="variableNames" value="_fields_"/>
-    <property key="variableValues" value=""/>
+    <property key="variableNames"/>
+    <property key="variableValues"/>
   </customproperties>
   <blendMode>0</blendMode>
   <featureBlendMode>0</featureBlendMode>
@@ -614,6 +625,7 @@
   <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
     <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="1">
       <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
+      <attribute field="" color="#000000" label=""/>
     </DiagramCategory>
     <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
       <layer pass="0" class="SimpleMarker" locked="0">
@@ -640,6 +652,28 @@
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="2" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
   <annotationform>.</annotationform>
+  <aliases>
+    <alias field="id" index="0" name=""/>
+    <alias field="nome" index="1" name=""/>
+    <alias field="nomeabrev" index="2" name=""/>
+    <alias field="geometriaaproximada" index="3" name=""/>
+    <alias field="coincidecomdentrode" index="4" name=""/>
+    <alias field="dentrodepoligono" index="5" name=""/>
+    <alias field="compartilhado" index="6" name=""/>
+    <alias field="eixoprincipal" index="7" name=""/>
+    <alias field="navegabilidade" index="8" name=""/>
+    <alias field="caladomax" index="9" name=""/>
+    <alias field="regime" index="10" name=""/>
+    <alias field="larguramedia" index="11" name=""/>
+    <alias field="velocidademedcorrente" index="12" name=""/>
+    <alias field="profundidademedia" index="13" name=""/>
+    <alias field="id_trecho_curso_dagua" index="14" name=""/>
+    <alias field="observacao" index="15" name=""/>
+    <alias field="data_modificacao" index="16" name=""/>
+    <alias field="controle_id" index="17" name=""/>
+    <alias field="ultimo_usuario" index="18" name=""/>
+    <alias field="lenght_otf" index="19" name=""/>
+  </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <attributeactions default="-1"/>
@@ -662,6 +696,10 @@
       <column width="-1" hidden="0" type="field" name="id_trecho_curso_dagua"/>
       <column width="-1" hidden="0" type="field" name="lenght_otf"/>
       <column width="-1" hidden="1" type="actions"/>
+      <column width="-1" hidden="0" type="field" name="observacao"/>
+      <column width="-1" hidden="0" type="field" name="data_modificacao"/>
+      <column width="-1" hidden="0" type="field" name="controle_id"/>
+      <column width="-1" hidden="0" type="field" name="ultimo_usuario"/>
     </columns>
   </attributetableconfig>
   <editform>.</editform>
@@ -672,9 +710,7 @@
 """
 Formas QGIS podem ter uma função Python que é chamada quando o formulário é
 aberto.
-
 Use esta função para adicionar lógica extra para seus formulários.
-
 Digite o nome da função na "função Python Init"
 campo.
 Um exemplo a seguir:
