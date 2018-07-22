@@ -57,8 +57,8 @@
   <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
     <rules key="{4ce34ef1-7bc1-4f24-8019-23f9bcd282d9}">
       <rule filter="&quot;tipotrechomassa&quot; = 99" key="{5fb092b2-2f6f-49b3-9183-2e65cdaf5630}" symbol="0" label="Outros"/>
-      <rule filter="&quot;tipotrechomassa&quot;=1 AND  &quot;nome&quot; != ''''" key="{a85a1d7c-8f5a-417a-8c22-45af20805210}" symbol="1" label="Rio com nome"/>
-      <rule filter="&quot;tipotrechomassa&quot;=1 AND   (&quot;nome&quot; = ''''    OR   &quot;nome&quot;  IS  NULL)" key="{6888d81e-2c43-402a-b2d1-d092e8ebe86a}" symbol="2" label="Rio"/>
+      <rule filter="&quot;regime&quot; = 1  AND  length(&quot;nome&quot;)!=0  AND  &quot;nome&quot; IS NOT NULL" key="{a85a1d7c-8f5a-417a-8c22-45af20805210}" symbol="1" label="Rio com nome"/>
+      <rule filter="&quot;tipotrechomassa&quot;=1" key="{6888d81e-2c43-402a-b2d1-d092e8ebe86a}" symbol="2" label="Rio"/>
       <rule filter="&quot;tipotrechomassa&quot;=10" key="{17a8a6ce-ff92-4f38-81a9-a08914980f5a}" symbol="3" label="Represa/aÃ§ude"/>
       <rule filter="&quot;salinidade&quot; = 2" key="{b3200377-f33a-4f3b-80eb-3930fc242636}" symbol="4" label="Salgado"/>
       <rule filter="&quot;tipotrechomassa&quot;=2" key="{41a8d130-8c63-422e-8127-16988057f4c9}" symbol="5" label="Canal"/>
