@@ -32,10 +32,10 @@
   <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
     <rules key="{79bf2d05-07e2-4dd4-95f8-23bfa0ea6b68}">
       <rule filter="&quot;rev&quot; = 1" key="{9e370ded-5cb9-4a12-869b-82d2fd70565a}" symbol="0" label="1">
-        <rule filter="&quot;obsoperador&quot; != '''' OR &quot;obsoperador&quot; IS NOT NULL" key="{c9a85d87-48f7-48b4-8bef-e756c533e262}" symbol="1" label="obsoperador"/>
+        <rule filter="length(&quot;obsoperador&quot;) != 0  AND  &quot;obsoperador&quot; IS NOT NULL" key="{c9a85d87-48f7-48b4-8bef-e756c533e262}" symbol="1" label="obsoperador"/>
       </rule>
       <rule filter="&quot;rev&quot; = 2" key="{dadbf146-58ef-4653-bae4-259f2f26a2ee}" symbol="2" label="2">
-        <rule filter="&quot;obsoperador&quot; != '''' OR &quot;obsoperador&quot; IS NOT NULL" key="{9ed0a3e1-66a9-4bb9-83a4-d43a33dc7673}" symbol="3" label="obsoperador"/>
+        <rule filter="length(&quot;obsoperador&quot;) != 0  AND  &quot;obsoperador&quot; IS NOT NULL" key="{9ed0a3e1-66a9-4bb9-83a4-d43a33dc7673}" symbol="3" label="obsoperador"/>
       </rule>
       <rule filter="ELSE" key="{21c96a0f-37b6-4f6d-8e62-4b99aad453b3}" symbol="4"/>
     </rules>
