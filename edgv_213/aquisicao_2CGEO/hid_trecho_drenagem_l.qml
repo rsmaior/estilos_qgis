@@ -100,7 +100,7 @@
   <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
     <rules key="{169f2ddd-fa34-4be8-b3e8-6974bfc4c924}">
       <rule filter="&quot;regime&quot; = 1  AND  length(&quot;nome&quot;)!=0  AND  &quot;nome&quot; IS NOT NULL" key="{32291303-3018-467a-86ce-76d4e4255b5e}" symbol="0" label="Permanente com Nome"/>
-      <rule filter="&quot;regime&quot; = 1" key="{4b58c64e-84b0-4325-88d3-87eff0fa91d8}" symbol="1" label="Permanente"/>
+      <rule filter="&quot;regime&quot; = 1  AND  (length(&quot;nome&quot;)=0   OR  &quot;nome&quot; IS     NULL)" key="{4b58c64e-84b0-4325-88d3-87eff0fa91d8}" symbol="1" label="Permanente"/>
       <rule filter="&quot;regime&quot; = 2" key="{de659dc3-c748-4419-a898-e61871604b8d}" symbol="2" label="Permanente com grande variação"/>
       <rule filter="&quot;regime&quot; = 3" key="{456558c7-9334-45b5-900e-c670ee35c73c}" symbol="3" label="Temporário"/>
       <rule filter="&quot;regime&quot; = 4" key="{3b070710-76e9-47f0-bcd9-aec49c62e26f}" symbol="4" label="Temporário com leito permanente"/>
